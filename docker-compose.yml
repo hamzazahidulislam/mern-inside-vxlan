@@ -1,0 +1,39 @@
+# @format
+
+version: '3.8'
+services:
+  react-app:
+    build: ./client
+    image: react-app
+    stdin_open: true
+    ports:
+      - '3000:3000'
+    networks:
+      - mern-app
+  api-server:
+    build: ./server
+    image: api-server
+    ports:
+      - '5000:5000'
+    networks:
+      - mern-app
+    depends_on:
+      - mongo
+    environment:
+      DATABASE_CONNECTION: mongodb://mongo:27017/mern-app
+      JWT_SECRET: secretkey
+      JWT_EXPIRE: '1d'
+  mongo:
+    image: mongo:3.6-xenial
+    ports:
+      - '27018:27017'
+    networks:
+      - mern-app
+    volumes:
+      - mongo-data:/data/db
+networks:
+  mern-app:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
