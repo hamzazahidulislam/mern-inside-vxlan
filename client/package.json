@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://api-server:5000",
+  "proxy": "http://10.0.1.40:5000",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.8",
