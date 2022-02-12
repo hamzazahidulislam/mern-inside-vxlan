@@ -1,13 +1,13 @@
-FROM node:14-slim
+# build env
+FROM node:14.19-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . ./
+RUN npm run build
 
-WORKDIR /usr/src/app
-
-COPY ./package.json ./
-
-RUN yarn install
-
-COPY . .
-
+# production env
+FROM nginx:stable-alpine
 EXPOSE 3000
-
-CMD [ "yarn", "start" ]
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build  /app/build  /usr/share/nginx/html
