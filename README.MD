@@ -35,8 +35,8 @@ sudo usermod -aG docker $USER
 
 # VPC IP Address
 
-**VPC: Ip Address (20.20.0.0/16)**\
- **Subnet: Ip Address (20.20.1.0/24)**
+**VPC: IP Address (20.20.0.0/16)**\
+ **Subnet: IP Address (20.20.1.0/24)**
 
 # Container Network Specifications:
 
