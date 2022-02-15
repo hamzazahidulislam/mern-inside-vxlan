@@ -1,12 +1,21 @@
 <!-- @format -->
 
-sudo apt-get update && sudo apt-get upgrade -y
+# mern application run inside networks using VXLAN tunnel
+
+i want to show you how run backend with database and frontend application in vxlan tunnel
+
+### Host-1 and Host-2 Common Setup
+
+`sudo apt-get update && sudo apt-get upgrade -y`
 
 --------- INSTALL DOCKER ---------
+
+```
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
+```
 
 sudo apt -y install net-tools openvswitch-switch
 
