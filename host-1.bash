@@ -12,10 +12,6 @@ sudo usermod -aG docker $USER
 
 sudo apt -y install net-tools openvswitch-switch
 
-git clone https://github.com/hamzazahidulislam/mern-inside-vxlan.git
-
-cd mern-inside-vxlan
-
 docker build -t react-app ./client
 
 sudo ovs-vsctl add-br br1
