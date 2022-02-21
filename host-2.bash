@@ -21,3 +21,5 @@ sudo ovs-vsctl add-port br1 vxlan1 -- set interface vxlan1 type=vxlan options:re
 sudo docker run -di --net none --name backend api-server
 
 sudo ovs-docker add-port br1 eth0 backend --ipaddress=10.0.1.40/24 --gateway=10.0.1.1
+
+echo "finished"

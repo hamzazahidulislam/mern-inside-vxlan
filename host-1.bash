@@ -38,3 +38,5 @@ sudo iptables --append FORWARD --out-interface net1 --jump ACCEPT
 sudo iptables --table nat --append POSTROUTING --source 10.0.1.0/24 --jump MASQUERADE
 
 sudo iptables -t nat -A PREROUTING -d ${eth0} -p tcp -m tcp --dport 3000 -j DNAT --to-destination 10.0.1.50:3000
+
+echo "finished"
