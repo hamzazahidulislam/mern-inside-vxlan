@@ -10,4 +10,5 @@ jobs:
   print-hello-world:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "hello world"
+      - uses: actions/checkout@v2
+      - run: tree
