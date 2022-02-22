@@ -23,9 +23,7 @@ sudo usermod -aG docker $USER
 
     sudo apt -y install net-tools openvswitch-switch
 
-    git clone https://github.com/hamzazahidulislam/mern-inside-vxlan.git
-
-    cd mern-inside-vxlan
+    git clone https://github.com/hamzazahidulislam/mern-inside-vxlan && cd mern-inside-vxlan
 
 ### build inside Host-1
 
