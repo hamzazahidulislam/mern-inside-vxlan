@@ -116,3 +116,20 @@ If we want to enable internet connectivity for **net1** then first we need to en
 ### Now, attach **net1** into container **backend** with IP configuration by below command:
 
     sudo ovs-docker add-port br1 eth0 backend --ipaddress=10.0.1.40/24 --gateway=10.0.1.1
+
+### you can check api from Host-1
+
+    curl -X POST -H "Content-Type: application/json"  -d '{"email":"test@g.com","password":"123"}' http://10.0.1.40:5000/api/auth/register
+
+    curl -X POST -H "Content-Type: application/json"  -d '{"email":"test@g.com","password":"123"}' http://10.0.1.50:3000/api/auth/login
+
+### or you run script:
+
+- #### clone project
+        git clone https://github.com/hamzazahidulislam/mern-inside-vxlan && cd mern-inside-vxlan
+- #### run script inside Host-1
+
+        sudo bash ./host-1.sh ${remote_ip} ${eth0}
+
+- #### run script inside Host-2
+        sudo bash ./host-2.sh ${remote_ip} ${eth0}
